@@ -127,7 +127,7 @@ const formatDate = (date) => {
   const hours = padStart(date.getHours())
   const minutes = padStart(date.getMinutes())
 
-  let currentDate = `${day}-${month}-${year}`;
+  let currentDate = `${day}/${month}/${year}`;
   return currentDate
 }
 
@@ -165,7 +165,7 @@ events = data_event.map((event) => {
     summary: event.summary,
     category: event.category,
     provider: event.provider,
-    date: `${event.date_start}`,
+    date: date.textContent,
     element: card,
     element_original: card,
   };
@@ -265,7 +265,9 @@ const handleSearch = (e, highlight = true) => {
     if (
       regex.test(event.title) ||
       regex.test(event.category) ||
-      regex.test(event.provider)
+      regex.test(event.provider) ||
+      regex.test(event.date)
+
     ) {
       selectedPost++
       getNbrOfSearchingResult(selectedPost)
@@ -338,7 +340,6 @@ const targetDate = new Date(new Date().toISOString().split('T')[0]).getTime()
 
 const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > targetDate && new Date(item.date_start).getTime() < targetDate + 60 * 60 * 24 * 1000);
 
-console.log(selectedDate)
 const generatorLuckyToday = new LuckyGenerator({ list: selectedDate, key: "title", isScrollTop: true });
 
 button.addEventListener("click", () => generatorLuckyPost.go())
