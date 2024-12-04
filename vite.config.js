@@ -31,6 +31,6 @@ export default defineConfig({
     }),
   ],
   server: { https: true },
-  base: "/frontend-alll-conferences/",
+  // base: "/frontend-alll-conferences/",
 
 })

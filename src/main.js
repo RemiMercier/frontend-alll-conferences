@@ -66,7 +66,7 @@ const categoriesPreview = {
     previewSearch.innerHTML = ""
 
     for (const key in this.items_obj) {
-      if (key > 12) {
+      if (key > 9) {
         break
       }
 
