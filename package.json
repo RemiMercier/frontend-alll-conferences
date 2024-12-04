@@ -1,0 +1,22 @@
+{
+  "name": "frontend-alll-conferences",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.81.1",
+    "vite": "^6.0.1",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-plugin-pwa": "^0.21.1"
+  },
+  "dependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}
