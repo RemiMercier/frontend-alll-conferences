@@ -14,6 +14,9 @@ const button1 = document.querySelector("#btn-lucky-category");
 const button2 = document.querySelector("#btn-lucky-today");
 const footer = document.querySelector("footer");
 
+const buttonErase = document.querySelector("#erase");
+
+
 const searchResult = document.querySelector("#search-result")
 
 data.forEach((e, i) => {
@@ -224,6 +227,11 @@ const highlightedText = (value, paragraph) => {
 
 searchInput.addEventListener("input", (e) => {
   handleSearch(e.target.value);
+});
+
+
+buttonErase.addEventListener("click", () => {
+  handleSearch("");
 });
 
 const handleSearch = (e, highlight = true) => {
