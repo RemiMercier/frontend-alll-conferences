@@ -127,7 +127,7 @@ const formatDate = (date) => {
   const hours = padStart(date.getHours())
   const minutes = padStart(date.getMinutes())
 
-  let currentDate = `${day}/${month}/${year}`;
+  let currentDate = `${day}-${month}-${year}`;
   return currentDate
 }
 
@@ -265,8 +265,7 @@ const handleSearch = (e, highlight = true) => {
     if (
       regex.test(event.title) ||
       regex.test(event.category) ||
-      regex.test(event.provider) ||
-      regex.test(event.date)
+      regex.test(event.provider)
     ) {
       selectedPost++
       getNbrOfSearchingResult(selectedPost)
@@ -335,9 +334,11 @@ const generatorLuckyPost = new LuckyGenerator({
 });
 const generatorLuckyCat = new LuckyGenerator({ list: categories, key: "key" });
 
-const targetDate = new Date().getTime()
-const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > targetDate && new Date(item.date_start).getTime() < targetDate + 60 * 60 * 24 * 0.5 * 1000);
+const targetDate = new Date(new Date().toISOString().split('T')[0]).getTime()
 
+const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > targetDate && new Date(item.date_start).getTime() < targetDate + 60 * 60 * 24 * 1000);
+
+console.log(selectedDate)
 const generatorLuckyToday = new LuckyGenerator({ list: selectedDate, key: "title", isScrollTop: true });
 
 button.addEventListener("click", () => generatorLuckyPost.go())
