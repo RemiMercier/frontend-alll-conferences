@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ALLL conferences of the woooorld !!</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="module" crossorigin src="/frontend-alll-conferences/assets/index-CaQoGg0R.js"></script>
+  <link rel="stylesheet" crossorigin href="/frontend-alll-conferences/assets/index-CBdv6ZJo.css">
+<link rel="manifest" href="/frontend-alll-conferences/manifest.webmanifest"></head>
+
+<body>
+  <h1>ALLL conferences of the woooorld !!</h1>
+  <p>En fait, pas seulement des conférences. Uniquement sur Paris. Qui concernent l'art et la culture. <br> Trouvés
+    sur quinze sites internet.
+  </p>
+  <p class="small">
+    *Vérifier toujours les dates, on est pas l'abri d'une coquille.
+  </p>
+
+  <header>
+    <div class="search-wrapper">
+      <div>
+        <input type="search" id="search" data-search placeholder="Chercher ?" autocomplete="off" />
+        <div id="search-result" class="search-result"></div>
+      </div>
+      <div class="w-button">
+        <button id="btn-lucky-post">Lucky post</button>
+        <button id="btn-lucky-category">Lucky category</button>
+        <button id="btn-lucky-today">Lucky today</button>
+      </div>
+
+    </div>
+
+    <div id="preview-search">
+      <p></p>
+    </div>
+  </header>
+  <nav></nav>
+  <main>
+    <div class="event-cards" data-event-cards-container></div>
+    <template data-event-template>
+      <div class="card not-in-view">
+        <div class="header" data-header>
+          <a href="" target="_blank" data-link>
+            <h2 data-title></h2>
+            <div class="cover" data-cover>
+              <div class="image">
+                <img loading="lazy" src="">
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </a>
+        </div>
+        <div class="body" data-body>
+          <p class="summary" data-summary></p>
+          <p class="date" data-date></p>
+          <p class="categories" data-categories></p>
+          <div class="provider" data-provider>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </main>
+  <footer>
+    <p></p>
+  </footer>
+</body>
+
+</html>
