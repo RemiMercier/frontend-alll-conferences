@@ -7,6 +7,8 @@ import { handleScrollTop } from "./utils.js"
 
 registerSW({ immediate: true })
 
+const todayDate = new Date(new Date().toISOString().split('T')[0]).getTime()
+
 let data_event = [...data];
 const searchInput = document.querySelector("[data-search]");
 const button = document.querySelector("#btn-lucky-post");
@@ -38,6 +40,8 @@ data_event = data_event.sort((a, b) => {
   const date_end = new Date(b.date[0]).getTime();
   return date_start - date_end
 });
+
+data_event = data_event.filter(item => (new Date(item.date_start).getTime() > todayDate || new Date(item.date_end).getTime() > todayDate || item.date_start === "NO DATE"));
 
 const categories_list = [];
 const categories_obj = {};
@@ -344,9 +348,7 @@ const generatorLuckyPost = new LuckyGenerator({
 });
 const generatorLuckyCat = new LuckyGenerator({ list: categories, key: "key" });
 
-const targetDate = new Date(new Date().toISOString().split('T')[0]).getTime()
-
-const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > targetDate && new Date(item.date_start).getTime() < targetDate + 60 * 60 * 24 * 1000);
+const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > todayDate && new Date(item.date_start).getTime() < todayDate + 60 * 60 * 24 * 1000);
 
 const generatorLuckyToday = new LuckyGenerator({ list: selectedDate, key: "title", isScrollTop: true });
 

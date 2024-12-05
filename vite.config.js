@@ -12,7 +12,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: 'ALLL conferences of the woooorld !!',
-        short_name: 'Acow',
+        short_name: 'Alll conf',
         description: "En fait, pas seulement des conférences. Uniquement sur Paris. Qui concernent l'art et la culture. Trouvés sur quinze sites internet.",
         theme_color: '#000000',
         icons: [
