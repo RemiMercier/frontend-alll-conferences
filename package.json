@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname alll-conferences.remi-mercier.fr"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0",
