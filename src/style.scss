@@ -224,9 +224,12 @@ header {
   .w-search {
     display: flex;
     box-sizing: border-box;
-    button{
+    button {
       margin-left: 0;
       margin-right: 1rem;
+      color: white;
+      background: initial;
+      border: initial;
     }
   }
 
