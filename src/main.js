@@ -241,6 +241,7 @@ searchInput.addEventListener("input", (e) => {
 
 
 buttonErase.addEventListener("click", () => {
+  handleScrollTop()
   handleSearch("");
 });
 
