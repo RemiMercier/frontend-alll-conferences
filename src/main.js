@@ -45,7 +45,7 @@ data_event = data_event.sort((a, b) => {
 
 data_event = data_event.filter(item => (new Date(item.date_start).getTime() > todayDate || new Date(item.date_end).getTime() > todayDate || item.date_start === "NO DATE"));
 
-const categories = await generateCategories(data_event)
+const categories = generateCategories(data_event)
 const categories_list = [];
 const categories_obj = {};
 
@@ -146,13 +146,15 @@ events = data_event.map((event) => {
   const summary = card.querySelector("[data-summary]");
   const cover = card.querySelector("[data-cover] img");
   const title = card.querySelector("[data-title]");
-  const link = card.querySelector("[data-link]");
+  const links = card.querySelectorAll("[data-link]");
   const provider = card.querySelector("[data-provider] p");
   const categories = card.querySelector("[data-categories]");
   const date = card.querySelector("[data-date]");
 
   title.textContent = event.title;
-  link.setAttribute("href", event.link);
+  links.forEach((el) => {
+    el.setAttribute("href", event.link);
+  })
 
   summary.textContent = event.summary;
   provider.textContent = event.provider;

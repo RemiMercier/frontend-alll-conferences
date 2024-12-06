@@ -12,10 +12,8 @@ const removeSpecialCharsForSearch = (s) => {
 const pattern = new RegExp(`\\b(${excludeWords.join('|')})`, 'i');
 const hasExcludedWord = (str) => pattern.test(removeSpecialCharsForSearch(str));
 
-const generateCategories = async (data_event) => {
+const generateCategories = (data_event) => {
     data_event.forEach(post => {
-
-        console.log(post.category)
         const post_categories = post.category.toLowerCase().split("//");
         const cleanedStrings = post_categories.map(s =>
             s.replace(/^[\s'.]+|[\s'.]+$/g, "")
@@ -47,8 +45,6 @@ const generateCategories = async (data_event) => {
     entries.sort(([, a], [, b]) => b.length - a.length);
     // const arr = entries.reverse()
     const sortedMap = new Map(entries);
-    // console.log(sortedMap)
-
 
     const array = Array.from(sortedMap.values());
 

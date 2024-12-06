@@ -10,46 +10,53 @@
 </head>
 
 <body>
-  <h1>ALLL conferences of the woooorld !!</h1>
-  <p class="intro">En fait, pas seulement des conférences. Uniquement sur Paris. Qui concernent l'art et la culture.
-    <br> Trouvés
-    sur quinze sites internet de qualité.
-  </p>
-  <p class="small">
-    * Pensez à vérifier les dates, on est pas à l'abri d'une erreur.
-  </p>
+  <div class="w-margin">
+    <h1>ALLL conferences of the woooorld !!</h1>
+    <p class="intro">En fait, pas seulement des conférences. Uniquement sur Paris. Qui concernent l'art et la culture.
+      <br> Trouvés
+      sur quinze sites internet de qualité.
+    </p>
+    <p class="small">
+      * Pensez à vérifier les dates, on est pas à l'abri d'une erreur.
+    </p>
+
+  </div>
 
   <header>
-    <div class="search-wrapper">
-      <div class="w-search">
-        <input type="search" id="search" data-search placeholder="Chercher ?" autocomplete="off" />
-        <div class="w-button">
-          <button id="erase">X
-            <div id="search-result" class="search-result"></div>
+    <div class="w-margin">
 
-          </button>
+      <div class="search-wrapper">
+        <div class="w-search">
+          <input type="search" id="search" data-search placeholder="Chercher ?" autocomplete="off" />
+          <div class="w-button">
+            <button id="erase">X
+              <div id="search-result" class="search-result"></div>
+
+            </button>
+          </div>
+
+        </div>
+        <div class="w-button">
+          <button id="btn-lucky-post">Lucky post</button>
+          <button id="btn-lucky-category">Lucky category</button>
+          <button id="btn-lucky-today">Lucky today</button>
         </div>
 
       </div>
-      <div class="w-button">
-        <button id="btn-lucky-post">Lucky post</button>
-        <button id="btn-lucky-category">Lucky category</button>
-        <button id="btn-lucky-today">Lucky today</button>
+
+      <div id="preview-search">
+        <p></p>
       </div>
-
     </div>
 
-    <div id="preview-search">
-      <p></p>
-    </div>
   </header>
   <nav></nav>
-  <main>
+  <main class="w-margin">
     <div class="event-cards" data-event-cards-container></div>
     <template data-event-template>
       <div class="card not-in-view">
-        <div class="header" data-header>
-          <a href="" target="_blank" data-link>
+        <a href="" target="_blank" data-link>
+          <div class="header" data-header>
             <h2 data-title></h2>
             <div class="cover" data-cover>
               <div class="image">
@@ -57,10 +64,13 @@
               </div>
               <div class="overlay"></div>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+
         <div class="body" data-body>
-          <p class="summary" data-summary></p>
+          <a href="" target="_blank" data-link>
+            <p class="summary" data-summary></p>
+          </a>
           <p class="date" data-date></p>
           <p class="categories" data-categories></p>
           <div class="provider" data-provider>
