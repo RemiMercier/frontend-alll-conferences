@@ -1,13 +1,19 @@
 
 const handleScrollTop = () => {
-    if (window.scrollY
-        > window.innerHeight / 2) {
+
+    const mainContainer = document.querySelector('main')
+
+    const intro = document.querySelector('.w-intro')
+
+    const scrollY = intro.getBoundingClientRect().height 
+    console.log(scrollY, window.scrollY )
+
         window.scroll({
-            top: 0,
+            top: scrollY,
             left: 0,
             behavior: "smooth",
         });
-    }
+    
 }
 
 export { handleScrollTop }
