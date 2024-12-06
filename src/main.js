@@ -348,14 +348,13 @@ class LuckyGenerator {
 
 const generatorLuckyPost = new LuckyGenerator({
   list: data_event,
-  isScrollTop: true,
   key: "title"
 });
 const generatorLuckyCat = new LuckyGenerator({ list: categories, key: "key" });
 
 const selectedDate = data_event.filter(item => new Date(item.date_start).getTime() > todayDate && new Date(item.date_start).getTime() < todayDate + 60 * 60 * 24 * 1000);
 
-const generatorLuckyToday = new LuckyGenerator({ list: selectedDate, key: "title", isScrollTop: true });
+const generatorLuckyToday = new LuckyGenerator({ list: selectedDate, key: "title" });
 
 button.addEventListener("click", () => generatorLuckyPost.go())
 button1.addEventListener("click", () => generatorLuckyCat.go())
