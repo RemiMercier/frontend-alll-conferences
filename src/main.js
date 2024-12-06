@@ -2,8 +2,10 @@ import './style.scss'
 import { registerSW } from 'virtual:pwa-register'
 
 import data from "./data/posts.json" with { type: "json" };
-import categories from "./data/categories.json";
+// import categories from "./data/categories.json";
 import { handleScrollTop } from "./utils.js"
+import { generateCategories } from "./categories.js"
+
 
 registerSW({ immediate: true })
 
@@ -43,6 +45,7 @@ data_event = data_event.sort((a, b) => {
 
 data_event = data_event.filter(item => (new Date(item.date_start).getTime() > todayDate || new Date(item.date_end).getTime() > todayDate || item.date_start === "NO DATE"));
 
+const categories = await generateCategories(data_event)
 const categories_list = [];
 const categories_obj = {};
 
